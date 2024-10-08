@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Verifikasi Umur</title>
+</head>
+<body>
+    <input type="number" id="age" placeholder="Umur Anda" required>
+    <button onclick="checkAccess()">Cek Akses</button>
+    <div class="result" id="result"></div>
+</div>
+    <script>
+        function checkAccess() {
+            const age = document.getElementById("age").value;
+            const resultDiv = document.getElementById("result");
+
+            if (age >= 18) {
+                resultDiv.textContent = "Selamat, kamu boleh akses web ini!";
+            } else {
+                resultDiv.textContent = "Maaf, kamu harus berumur 18 tahun atau lebih untuk mengakses.";
+            }
+        }
+    </script>
+</body>
+</html>
