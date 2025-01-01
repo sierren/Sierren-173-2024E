@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct PasienRujukan {
+    int id;                 
+    string nama;            
+    string penyakit;        
+    string rumahSakitAsal;  
+    string rumahSakitTujuan; 
+};
+
+// Fungsi untuk menambah data pasien
+void tambahPasien(PasienRujukan pasien[], int& count) {
+    cout << "Masukkan ID Pasien: ";
+    cin >> pasien[count].id;
+    cin.ignore();  // Untuk membersihkan newline character di buffer setelah memasukkan ID
+    cout << "Masukkan Nama Pasien: ";
+    getline(cin, pasien[count].nama);
+    cout << "Masukkan Penyakit Pasien: ";
+    getline(cin, pasien[count].penyakit);
+    cout << "Masukkan Rumah Sakit Asal: ";
+    getline(cin, pasien[count].rumahSakitAsal);
+    cout << "Masukkan Rumah Sakit Tujuan: ";
+    getline(cin, pasien[count].rumahSakitTujuan);
+
+    count++;  
+    cout << "Data pasien sudah berhasil ditambahkan.\n";
+}
+
+void tampilkanPasien(const PasienRujukan pasien[], int count) {
+    if (count == 0) {
+        cout << "Tidak ada data pasien.\n";
+        return;
+    }
+
+    for (int i = 0; i < count; i++) {
+        cout << "ID Pasien: " << pasien[i].id << endl;
+        cout << "Nama Pasien: " << pasien[i].nama << endl;
+        cout << "Penyakit: " << pasien[i].penyakit << endl;
+        cout << "Rumah Sakit Asal: " << pasien[i].rumahSakitAsal << endl;
+        cout << "Rumah Sakit Tujuan: " << pasien[i].rumahSakitTujuan << endl;
+        cout << "-----------------------------\n";
+  }
