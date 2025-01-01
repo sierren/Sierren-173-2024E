@@ -1,0 +1,36 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Pasien {
+    string nama;    
+    int umur;       
+    string penyakit; 
+    string rumahsakitasal;
+};
+
+int main() {
+    Pasien pasien1;
+
+    cout << "Masukkan nama pasien: ";
+    getline(cin, pasien1.nama);  
+
+    cout << "Masukkan umur pasien: ";
+    cin >> pasien1.umur;
+
+    cin.ignore();  
+
+    cout << "Masukkan penyakit yang diderita: ";
+    getline(cin, pasien1.penyakit);  
+
+    cout << "Masukkan nama rumah sakit asal pasien: ";
+    getline(cin, pasien1.rumahsakitasal);  
+
+    cout << "\n--- Data Pasien Rujukan ---\n";
+    cout << "Nama Pasien: " << pasien1.nama << endl;
+    cout << "Umur Pasien: " << pasien1.umur << " tahun" << endl;
+    cout << "Penyakit: " << pasien1.penyakit << endl;
+    cout << "Rumah Sakit Asal: " << pasien1.rumahsakitasal << endl;
+
+    return 0;
+}
